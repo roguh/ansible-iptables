@@ -1,0 +1,8 @@
+---
+
+- name: Restart fwknop
+  service:
+    name: iptables-restore
+    state: restarted
+
+

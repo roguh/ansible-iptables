@@ -1,0 +1,4 @@
+iptables_open_dports:
+    - 80
+    - 443
+    - 22
