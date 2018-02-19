@@ -18,7 +18,7 @@
     owner: "root"
     group: "root"
     mode: "0644"
-  register: iptables_register_config
+  notify: Restart iptables service
 
 - name: Copy systemd unit file
   copy:
@@ -32,10 +32,3 @@
 - name: Reload systemd daemon
   command: "systemctl daemon-reload"
   when: iptables_register_unit | changed
-
-- name: Restart iptables service
-  service:
-    name: "iptables-restore"
-    state: "restarted"
-    enabled: True
-  when: iptables_register_config | changed
