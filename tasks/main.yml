@@ -31,4 +31,4 @@
 
 - name: Reload systemd daemon
   command: "systemctl daemon-reload"
-  when: iptables_register_unit | changed
+  when: iptables_register_unit is changed
